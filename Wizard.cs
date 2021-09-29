@@ -1,10 +1,10 @@
 using System;
 
-namespace cd_c_wizNinjSam
+namespace cd_c_rpg_group
 {
     class Wizard : Human
     {
-        public Wizard(string Name, int Strength, int Intelligience, int Dexterity, int Health) : base(Name, Strength, 25, Dexterity, 50)
+        public Wizard(string Name, int Strength = 3, int Intelligience = 25, int Dexterity = 3, int Health = 50) : base(Name, Strength, Intelligience, Dexterity, Health)
         {
             this.Name = Name;
         } // END WIZARD CONSTRUCTOR
@@ -18,6 +18,14 @@ namespace cd_c_wizNinjSam
             return target.Health;
             
         } // END ATTACK METHOD
+
+        public virtual int Heal(Human target)
+        {
+            int healing = Intelligience * 3;
+            target.Health += healing;
+            System.Console.WriteLine($"{Name} healed {target.Name}  for {healing} health");
+            return target.Health;
+        } // END HEAL METHOD
 
     } // END WIZARD CLASS
 

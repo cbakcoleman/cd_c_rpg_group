@@ -1,6 +1,6 @@
 using System;
 
-namespace cd_c_wizNinjSam
+namespace cd_c_rpg_group
 {
 
 
@@ -11,20 +11,20 @@ namespace cd_c_wizNinjSam
         public int Strength;
         public int Intelligience;
         public int Dexterity;
-        private int health;
+        public int Health;
 
         // Add a public "getter" property to access health
-        public int Health
-        {
-            get
-            {
-                return health;
-            }
-            set
-            {
-                health = value;
-            }
-        }
+        //public int Health
+        //{
+        //    get
+        //    {
+        //        return health;
+        //    }
+        //    set
+        //    {
+        //        health = value;
+        //    }
+        //}
 
         // Add a constructor that takes a value to set Name, and set the remaining fields to default values
         public Human(string Name)
@@ -32,22 +32,22 @@ namespace cd_c_wizNinjSam
             Strength = 3;
             Intelligience = 3;
             Dexterity = 3;
-            health = 100;
+            Health = 100;
             this.Name = Name;
         }
 
         // Add a constructor to assign custom vaues to all fields
-        public Human(string Name, int Strength, int Intelligience, int Dexterity, int health)
+        public Human(string Name, int Strength, int Intelligience, int Dexterity, int Health)
         {
             this.Strength = Strength;
             this.Intelligience = Intelligience;
             this.Dexterity = Dexterity;
-            this.Strength = Strength;
-            this.Strength = Strength;
+            this.Health = Health;
+            this.Name= Name;
         }
 
         // Build Attack method
-        public int Attack(Human target)
+        public virtual int Attack(Human target)
         {
             int damage = Strength * 5; 
             target.Health -= damage;

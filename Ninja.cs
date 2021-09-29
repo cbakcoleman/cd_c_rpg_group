@@ -1,19 +1,19 @@
 using System;
 
-namespace cd_c_wizNinjSam
+namespace cd_c_rpg_group
 {
     class Ninja : Human
     {
-        public Ninja(string Name, int Strength, int Intelligience, int Dexterity, int Health) : base(Name, Strength, Intelligience, 175, Health)
+        public Ninja(string Name, int Strength = 3, int Intelligience = 3, int Dexterity = 175, int Health = 100) : base(Name, Strength, Intelligience, Dexterity, Health)
         {
             this.Name = Name;
         } // END NINJA CONSTRUCTOR
 
         public override int Attack(Human target)
         {
-            Random rando = new Random(0, 21);
+            Random rando = new Random();
             int damage = Dexterity * 5; 
-            int xtradmg = rando.Next(0, 21)
+            int xtradmg = rando.Next(0, 21);
             target.Health -= damage;
             if (xtradmg == 20)
             {
@@ -23,6 +23,13 @@ namespace cd_c_wizNinjSam
             return target.Health;
             
         } // END ATTACK METHOD
+
+        public virtual int Steal(Human target)
+        {
+            target.Health -= 5;
+            this.Health += 5;
+            return target.Health;
+        } // END STEAL METHOD
 
     } // END NINJA CLASS
 }
