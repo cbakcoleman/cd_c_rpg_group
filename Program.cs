@@ -101,8 +101,6 @@ namespace cd_c_rpg_group
                     }
                 }
 
-
-
             } // END GAME LOOP
 
         } // END MAIN
