@@ -11,20 +11,18 @@ namespace cd_c_rpg_group
         public int Strength;
         public int Intelligience;
         public int Dexterity;
-        public int Health;
+        protected int health;
+
 
         // Add a public "getter" property to access health
-        //public int Health
-        //{
-        //    get
-        //    {
-        //        return health;
-        //    }
-        //    set
-        //    {
-        //        health = value;
-        //    }
-        //}
+        public int Health
+        {
+            get
+            {
+                return health;
+            }
+            set {}
+        }
 
         // Add a constructor that takes a value to set Name, and set the remaining fields to default values
         public Human(string Name)

@@ -4,7 +4,7 @@ namespace cd_c_rpg_group
 {
     class Wizard : Human
     {
-        public Wizard(string Name, int Strength = 3, int Intelligience = 25, int Dexterity = 3, int Health = 50) : base(Name, Strength, Intelligience, Dexterity, Health)
+        public Wizard(string Name) : base(Name, 3, 25, 3, 50)
         {
             this.Name = Name;
         } // END WIZARD CONSTRUCTOR

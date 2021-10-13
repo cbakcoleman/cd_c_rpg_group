@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Per Cody, this submission acceptible for 'Deck of Cards' assignment due to
+// labeling error on Assigment Progress/Checklist
+
+using System;
 
 namespace cd_c_rpg_group
 {
@@ -17,21 +20,21 @@ namespace cd_c_rpg_group
             System.Console.WriteLine("1. Wizard\n2. Ninja\n3. Samurai");
 
             string response = Console.ReadLine();
-
+            Human player1;
             if (response == "1" || response.ToLower().StartsWith("one") || response.ToLower().Contains("wizard"))
             {
                 System.Console.WriteLine("You chose Wizard!");
-                Wizard player1 = new Wizard(player1Name);
+                player1 = new Wizard(player1Name);
             }
             if (response == "2" || response.ToLower().StartsWith("two") || response.ToLower().Contains("Ninja"))
             {
                 System.Console.WriteLine("You chose Ninja!");
-                Ninja player1 = new Ninja(player1Name);
+                player1 = new Ninja(player1Name);
             }
             if (response == "3" || response.ToLower().StartsWith("three") || response.ToLower().Contains("samurai"))
             {
                 System.Console.WriteLine("You chose Samurai!");
-                Samurai player1 = new Samurai(player1Name);
+                player1 = new Samurai(player1Name);
             } // END PLAYER 1 SET UP
 
             // PLAYER 2 SET UP
@@ -43,27 +46,28 @@ namespace cd_c_rpg_group
             System.Console.WriteLine("1. Wizard\n2. Ninja\n3. Samurai");
 
             string response2 = Console.ReadLine();
-
+            Human player2; 
             if (response2 == "1" || response2.ToLower().StartsWith("one") || response2.ToLower().Contains("wizard"))
             {
                 System.Console.WriteLine("You chose Wizard!");
-                Wizard player2 = new Wizard(player2Name);
+                player2 = new Wizard(player2Name);
             }
             if (response2 == "2" || response2.ToLower().StartsWith("two") || response2.ToLower().Contains("Ninja"))
             {
                 System.Console.WriteLine("You chose Ninja!");
-                Ninja player2 = new Ninja(player2Name);
+                player2 = new Ninja(player2Name);
             }
             if (response2 == "3" || response2.ToLower().StartsWith("three") || response2.ToLower().Contains("samurai"))
             {
                 System.Console.WriteLine("You chose Samurai!");
-                Samurai player2 = new Samurai(player2Name);
+                player2 = new Samurai(player2Name);
             } // END PLAYER 2 SET UP
 
             // GAME LOOP
             int loops = 1;
             while (player1.Health > 0 || player2.Health > 0)
             {
+                
                 if (loops % 2 != 0)
                 {
                     player = player1;
@@ -91,11 +95,11 @@ namespace cd_c_rpg_group
                     }
 
                     // GAME RESOLVE
-                    if (player1.Health <= 0)
+                    if (player1.Health < 1)
                     {
                         System.Console.WriteLine($"{player2.Name} is VICTORIOUS!");
                     }
-                    if (player2.Health <= 0)
+                    if (player2.Health < 1)
                     {
                         System.Console.WriteLine($"{player1.Name} is VICTORIOUS!");
                     }
